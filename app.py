@@ -20,8 +20,8 @@ def index():
 
 @app.route("/book/<int:id>")
 def detail(id):
-    if isinstance(id, int) and id < len(book_data):
-        return jsonify(book_data[id])
+    if isinstance(id, int) and id <= len(book_data):
+        return jsonify(book_data[id-1])
     return "图书ID不合法"
 
 
